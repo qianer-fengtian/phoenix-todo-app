@@ -7,6 +7,8 @@ defmodule PhoenixTodoAppWeb.Router do
 
   scope "/api", PhoenixTodoAppWeb do
     pipe_through :api
+
+    resources "/todo_tasks", TaskController, only: [:create, :index]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
