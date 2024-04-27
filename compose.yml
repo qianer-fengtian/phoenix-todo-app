@@ -17,6 +17,8 @@ services:
     command: mix phx.server
     volumes:
       - .:/app
+    depends_on:
+      - db
 
 volumes:
   db_volume:
