@@ -12,7 +12,7 @@ defmodule PhoenixTodoApp.TodoFixtures do
       attrs
       |> Enum.into(%{
         content: "some content",
-        state: 42
+        state: 0
       })
       |> PhoenixTodoApp.Todo.create_task()
 

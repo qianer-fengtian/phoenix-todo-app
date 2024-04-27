@@ -21,10 +21,10 @@ defmodule PhoenixTodoApp.TodoTest do
     end
 
     test "create_task/1 with valid data creates a task" do
-      valid_attrs = %{state: 42, content: "some content"}
+      valid_attrs = %{state: 1, content: "some content"}
 
       assert {:ok, %Task{} = task} = Todo.create_task(valid_attrs)
-      assert task.state == 42
+      assert task.state == :doing
       assert task.content == "some content"
     end
 
@@ -34,10 +34,10 @@ defmodule PhoenixTodoApp.TodoTest do
 
     test "update_task/2 with valid data updates the task" do
       task = task_fixture()
-      update_attrs = %{state: 43, content: "some updated content"}
+      update_attrs = %{state: 1, content: "some updated content"}
 
       assert {:ok, %Task{} = task} = Todo.update_task(task, update_attrs)
-      assert task.state == 43
+      assert task.state == :doing
       assert task.content == "some updated content"
     end
 
